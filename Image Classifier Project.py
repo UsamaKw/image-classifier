@@ -75,7 +75,7 @@ input_size = 25088
 output_size = 102
 hidden_layers = [12544, 1568]
 drop = 0.5
-epochs = 3
+epochs = 10
 learning_rate = 0.001
 
 #cuda = torch.cuda.is_available()
@@ -90,7 +90,7 @@ test_transforms = transforms.Compose([transforms.Resize(256),
 train_transforms = transforms.Compose([
                                       transforms.RandomResizedCrop(224),
                                       transforms.RandomHorizontalFlip(),
-                                      transforms.RandomRotation(90),
+                                      transforms.RandomRotation(30),
                                       transforms.ToTensor(),
                                       transforms.Normalize(mean,sd)
                                      ])
@@ -244,7 +244,7 @@ print("Test Loss: {:.3f}.. ".format(test_loss/len(loaders['valid'])),
       "Test Accuracy: {:.3f}".format(accuracy/len(loaders['valid']))) 
 
 
-# In[9]:
+# In[ ]:
 
 
 def check_accuracy_on_test(loader): 
